@@ -13,3 +13,9 @@ sources:
     tables:
       - name: inventory
         identifier: raw_inventory
+  - name: warehouse_loc
+    schema: dbt__raw
+    database: SUPPLY_CHAIN3
+    tables:
+      - name: warehouse
+        identifier: WAREHOUSE_LOCATIONS
