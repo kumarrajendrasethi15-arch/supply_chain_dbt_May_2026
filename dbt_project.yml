@@ -50,7 +50,7 @@ models:
       +materialized: table
       +database: supply_chain3
       +schema: gold
-
+      +tags: gold
 seeds:
   my_new_project:
     warehouse_locations:
@@ -87,4 +87,10 @@ seeds:
           SELECT 1
           FROM SUPPLY_CHAIN3.AUDIT.MODEL_EXECUTION_LOG
           WHERE model_name = 'warehouse_locations'
-            AND row_count = (SELECT COUNT(*) FROM SUPPLY_CHAIN3.DBT__RAW.WAREHOUSE_LOCATIONS))
+            AND row_count = (SELECT COUNT(*) FROM SUPPLY_CHAIN3.DBT__RAW.WAREHOUSE_LOCATIONS))   
+snapshots: 
+  my_new_project:
+    customer:
+      +schema: silver
+    inventory:
+      +schema: silver
